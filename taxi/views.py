@@ -21,6 +21,12 @@ class ManufacturerListView(generic.ListView):
     paginate_by = 5
 
 
+class ManufacturerDetailView(generic.DetailView):
+    model = Manufacturer
+    template_name = "manufacturer-detail.html"
+    context_object_name = "manufacturer"
+
+
 class CarListView(generic.ListView):
     model = Car
     queryset = Car.objects.select_related("manufacturer")
