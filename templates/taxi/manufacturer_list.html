@@ -1,17 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
-  <h1>Manufacturer list</h1>
+  <h1>Manufacturer List</h1>
   {% if manufacturer_list %}
     <ul>
       {% for manufacturer in manufacturer_list %}
-        <li>
-          <a href="{% url 'taxi:manufacturer-detail' pk=manufacturer.pk %}">{{ manufacturer.name }}
-            - {{ manufacturer.country }}</a>
-        </li>
+        <li>{{ manufacturer.name }} {{ manufacturer.country }}</li>
       {% endfor %}
     </ul>
   {% else %}
-    <p>No manufacturers available.</p>
+    <p>There are no Manufacturer</p>
   {% endif %}
 {% endblock %}
 
